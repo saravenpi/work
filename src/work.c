@@ -26,7 +26,7 @@ void	save_work_session(time_t start_time, time_t elapsed_time)
 		printf("ERROR: could not find $HOME variable to append to  history");
 		return;
 	}
-	sprintf(file_path, "%s/%s", getenv("HOME"), PROGRAM_HISTORY_FILENAME);
+	sprintf(file_path, "%s/%s", home_path, PROGRAM_HISTORY_FILENAME);
 	append_str_to_file(session_log, file_path);
 }
 
