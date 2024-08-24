@@ -1,6 +1,7 @@
 #include "work.h"
 #include <string.h>
 
+// prints the help message
 void	print_help(void)
 {
     printf("Usage: %s[options]\n", PROGRAM_NAME);

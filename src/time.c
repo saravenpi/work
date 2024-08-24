@@ -1,5 +1,10 @@
 #include "work.h"
 
+// creates a string
+// that contains the format
+// of the given time to
+// a human readable date string
+// and returns it
 char	*get_time_format(time_t time)
 {
 	struct tm	*tm_time;
@@ -15,19 +20,4 @@ char	*get_time_format(time_t time)
 		 tm_time->tm_sec
 	);
 	return (time_format_str);
-}
-
-time_t	get_elapsed_time_from_date_string(const char *date_str)
-{
-    struct tm input_time = {0};
-    time_t input_time_t;
-	time_t current_time;
-    time_t elapsed_time;
-
-    if (strptime(date_str, "%Y:%m:%d", &input_time) == NULL)
-        return -1;
-    input_time_t = mktime(&input_time);
-    current_time = time(NULL);
-	elapsed_time = difftime(current_time, input_time_t);
-    return (elapsed_time);
 }

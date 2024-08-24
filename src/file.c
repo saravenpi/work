@@ -1,5 +1,9 @@
 #include <stdio.h>
 
+// appends a string to
+// the given path
+// it creates the file
+// if it doesn't exist
 void	append_str_to_file(char *str, char *path)
 {
 	

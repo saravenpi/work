@@ -1,5 +1,7 @@
 #include "work.h"
 
+// tries to append the session string to
+// the history file
 void	save_work_session(time_t start_time, time_t elapsed_time)
 {
 	char	*start_str;
@@ -30,6 +32,8 @@ void	save_work_session(time_t start_time, time_t elapsed_time)
 	append_str_to_file(session_log, file_path);
 }
 
+// starts a work session and tries to save it to
+// the history file
 void	start_work_session(void)
 {
 	time_t	start_time;
