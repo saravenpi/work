@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+void	append_str_to_file(char *str, char *path)
+{
+	
+	FILE	*file;
+
+	file = fopen(path, "a");
+	if (file == NULL) {
+		printf("Error opening the file.\n");
+		return;
+	}
+	fprintf(file, "%s", str);
+	fclose(file);
+}
