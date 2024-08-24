@@ -5,6 +5,8 @@ void	save_work_session(time_t start_time, time_t elapsed_time)
 	char	*start_str;
 	char	*end_str;
 	char	session_log[512];
+	char	file_path[512];
+	char	*home_path;
 
 	start_str = get_time_format(start_time);
 	end_str = get_time_format(start_time + elapsed_time);
@@ -18,7 +20,14 @@ void	save_work_session(time_t start_time, time_t elapsed_time)
 		 );
 	free(start_str);
 	free(end_str);
-	append_str_to_file(session_log, PROGRAM_HISTORY_FILE);
+	home_path = getenv("HOME");
+	if (home_path == NULL)
+	{
+		printf("ERROR: could not find $HOME variable to append to  history");
+		return;
+	}
+	sprintf(file_path, "%s/%s", getenv("HOME"), PROGRAM_HISTORY_FILENAME);
+	append_str_to_file(session_log, file_path);
 }
 
 void	start_work_session(void)

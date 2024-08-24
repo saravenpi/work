@@ -4,7 +4,7 @@
 #include <stdlib.h>
 
 #define PROGRAM_NAME "work"
-#define PROGRAM_HISTORY_FILE "~/.workhistory"
+#define PROGRAM_HISTORY_FILENAME ".workhistory"
 #define SESSION_LENGTH_SECS 1500 // 25 minutes
 
 // src/file.c
