@@ -5,7 +5,7 @@
 
 #define PROGRAM_NAME "work"
 #define PROGRAM_HISTORY_FILE "/Users/yannthevenin/.workhistory"
-#define SESSION_LENGTH_SECS 10
+#define SESSION_LENGTH_SECS 1500 // 25 minutes
 
 // src/file.c
 void	append_str_to_file(char *str, char *path);
