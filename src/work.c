@@ -1,12 +1,15 @@
 #include "work.h"
 
+#define DATE_STR_LENGTH 19
+#define OFFSET 7
+
 // tries to append the session string to
 // the history file
 void save_work_session(time_t start_time, time_t elapsed_time)
 {
     char *start_str;
     char *end_str;
-    char session_log[512];
+    char session_log[(DATE_STR_LENGTH * 2) + OFFSET + 1];
     char file_path[512];
     char *home_path;
 
@@ -16,7 +19,7 @@ void save_work_session(time_t start_time, time_t elapsed_time)
         printf("ERROR: not enough memory\n");
         return;
     }
-    sprintf(session_log, "#SESSION %s -> %s\n", start_str, end_str);
+    sprintf(session_log, "- %s -> %s\n", start_str, end_str);
     free(start_str);
     free(end_str);
     home_path = getenv("HOME");
