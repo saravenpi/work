@@ -16,7 +16,7 @@ void	save_work_session(time_t start_time, time_t elapsed_time)
 		printf("ERROR: not enough memory\n");
 		return;
 	}
-	sprintf(session_log, "#SESSION %s-%s\n",
+	sprintf(session_log, "#SESSION %s -> %s\n",
 		 start_str,
 		 end_str
 		 );
