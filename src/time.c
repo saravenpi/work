@@ -10,7 +10,7 @@ char *get_time_format(time_t time) {
 	struct tm *tm_time;
 	char *time_format_str;
 
-	time_format_str = malloc(20 * sizeof(char)); // Increase buffer size to accommodate date and time
+	time_format_str = malloc(20 * sizeof(char));
 	if (!time_format_str)
 		return (NULL);
 	tm_time = localtime(&time);
