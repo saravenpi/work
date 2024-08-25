@@ -1,11 +1,8 @@
 #include "work.h"
 
 // creates a string
-// that contains the format
-// of the given time to
-// a human readable date string
-// and returns it to
-// this format: "YYYY/MM/DD|hh:mm:ss"
+// formatted to: "YYYY/MM/DD|hh:mm:ss"
+// from the given time_t and returns it
 char *get_time_format(time_t time)
 {
     struct tm *tm_time;
