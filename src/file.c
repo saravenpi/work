@@ -4,16 +4,15 @@
 // the given path
 // it creates the file
 // if it doesn't exist
-void	append_str_to_file(char *str, char *path)
+void append_str_to_file(char *str, char *path)
 {
-	
-	FILE	*file;
+    FILE *file;
 
-	file = fopen(path, "a+");
-	if (file == NULL) {
-		printf("Error opening the file.\n");
-		return;
-	}
-	fprintf(file, "%s", str);
-	fclose(file);
+    file = fopen(path, "a+");
+    if (file == NULL) {
+        printf("Error opening the file.\n");
+        return;
+    }
+    fprintf(file, "%s", str);
+    fclose(file);
 }
