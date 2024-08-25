@@ -4,7 +4,8 @@
 // that contains the format
 // of the given time to
 // a human readable date string
-// and returns it
+// and returns it to
+// this format: "YYYY/MM/DD|hh:mm:ss"
 char *get_time_format(time_t time) {
 	struct tm *tm_time;
 	char *time_format_str;
