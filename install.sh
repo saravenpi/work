@@ -1,4 +1,4 @@
-INSTALL_PATH="$HOME/mybins/"
+INSTALL_PATH="/usr/bin/"
 make re
-cp ./work $INSTALL_PATH
+sudo cp ./work $INSTALL_PATH
 echo "🎉 Installed work successfully"
