@@ -1,26 +1,36 @@
-CC = gcc
-CFLAGS = -Wall -Wextra -I./includes
-LDFLAGS =
+BINARY_NAME = work
+GO_FILES = $(shell find . -name '*.go' -type f)
 
-SRC := $(wildcard src/*.c) $(wildcard src/*/*.c)
-OBJ := $(SRC:.c=.o)
+all: build
 
-EXEC = work
+build: $(BINARY_NAME)
 
-.PHONY: all clean fclean re
-
-all: $(EXEC)
-
-$(EXEC): $(OBJ)
-	$(CC) $(LDFLAGS) -o $@ $^
-
-%.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+$(BINARY_NAME): $(GO_FILES)
+	go build -o $(BINARY_NAME)
 
 clean:
-	rm -f $(OBJ)
+	rm -f $(BINARY_NAME)
+
+test:
+	go test ./...
+
+fmt:
+	go fmt ./...
+
+vet:
+	go vet ./...
+
+mod-tidy:
+	go mod tidy
+
+install: build
+	cp $(BINARY_NAME) /usr/local/bin/
+
+uninstall:
+	rm -f /usr/local/bin/$(BINARY_NAME)
 
 fclean: clean
-	rm -f $(EXEC)
 
-re: fclean all
+re: fclean build
+
+.PHONY: all build clean fclean test fmt vet mod-tidy install uninstall re

@@ -1,3 +1,23 @@
-*.o
+# Go binary
 work
-.clangd
+
+# Go build artifacts  
+*.test
+*.out
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+
+# Go module cache
+go.sum.backup
